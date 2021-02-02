@@ -1,0 +1,20 @@
+{"dosen" :
+    [
+        {
+            "nidn" : "0407078001",
+                "nm_dosen" : "Alex Waskita",
+                    "tgl_lahir" : "1980-07-07",
+                        "j_kel" : "1",
+                            "home_base" : "1",
+                                "pend_akhir" : "2"
+        },
+        {
+            "nidn" : "0410108405",
+                "nm_dosen" : "dita Dewanti",
+                    "tgl_lahir" : "1984-10-10",
+                        "j_kel" : "2",
+                            "home_base" : "2",
+                                "pend_akhir" : "2"
+        }
+
+    ]}

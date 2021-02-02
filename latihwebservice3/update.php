@@ -94,7 +94,7 @@ if (isset($_POST["id"])) {
                             <select class="form-control" required="required" id="inputGender" name="gender">
                                 <option>Please Select</option>
                                 <option value="Male" <?php echo $jsonfile["gender"] == 'Male' ? 'selected' : ''; ?>>Male</option>
-                                <option value="Female" <?php echo $jsonfile["gender"] == 'Famale' ? 'selected' : ''; ?>>Female</option>
+                                <option value="Female" <?php echo $jsonfile["gender"] == 'Famale' ? 'selected' : ''; ?>>>Female</option>
                             </select>
                             <span class="help-block"></span>
                         </div>

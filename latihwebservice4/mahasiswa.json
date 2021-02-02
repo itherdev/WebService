@@ -1,0 +1,9 @@
+{"mahasiswa" :
+    [
+        {"nim" : "41180184", "nama" : "Istiharoh","tglllhr" : "1999-10-30","jkelamin":"Wanita", "jurusan":"Teknik Informatika", "alamat":"cirebon"},
+        {"nim" : "41180180", "nama" : "Nur Amalia","tglllhr" : "1999-02-15","jkelamin":"Wanita", "jurusan":"Teknik Informatika", "alamat":"cirebon"},
+        {"nim" : "41180172", "nama" : "M. Lutfi","tglllhr" : "1998-09-02","jkelamin":"Pria", "jurusan":"Teknik Informatika", "alamat":"cirebon"}
+
+    ]
+
+}
