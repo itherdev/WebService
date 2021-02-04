@@ -57,7 +57,7 @@ $jsonfile = json_decode($getfile);
     </div>
     <div class="container">
         <div class="btn-toolbar">
-            <a href="tambahmata_kuliah.php" class="btn btn-primary">
+            <a href="tambah_mata_kuliah.php" class="btn btn-primary">
                 <i class="icon-plus"></i>Tambah Data
             </a>
             <div class="btn-group"></div>

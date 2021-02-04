@@ -1,0 +1,25 @@
+{"nilai" :
+    [
+        {
+            "id_nilai" : "N0001",
+                "nim" : "41200010",
+                    "nm_mahasiswa" : "Istiharoh",
+                        "nm_mata_kuliah" : "Pancasila",
+                            "nilai_absensi" : "100",
+                            "nilai_tugas" : "90",
+                            "nilai_uts" : "80",
+                            "nilai_uas" :"90"
+        },
+        {
+            "id_nilai" : "N0002",
+                "nim" : "41200011",
+                    "nm_mahasiswa" : "Mila Karmila",
+                        "nm_mata_kuliah" : "Pancasila",
+                            "nilai_absensi" : "80",
+                            "nilai_tugas" : "70",
+                            "nilai_uts" : "80",
+                            "nilai_uas" :"80"
+        }
+        
+
+    ]}
