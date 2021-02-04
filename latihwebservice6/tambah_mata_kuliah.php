@@ -1,16 +1,15 @@
 <?php
 if (!empty($_POST)) {
     //post values
-    $nidn = $_POST['nidn'];
-    $nm_dosen = $_POST['nm_dosen'];
-    $tgl_lahir = date("Y-m-d", strtotime($_POST['tgl_lahir']));
-    $j_kel = $_POST['j_kel'];
-    $home_base = $_POST['home_base'];
-    $pend_akhir = $_POST['pend_akhir'];
+    $kode_mk = $_POST['kode_mk'];
+    $nama_mk = $_POST['nama_mk'];
+    $jurusan = $_POST['jurusan'];
+    $jenis = $_POST['jenis'];
+    $sks = $_POST['sks'];
 
-    //membaca semua data yang ada di file dosen.json
+    //membaca semua data yang ada di file mata_kuliah.json
     //dalam bentuk string
-    $file = file_get_contents('dosen.json');
+    $file = file_get_contents('mata_kuliah.json');
     //menerjemahkan string JSON. Dengan kata lain,
     //mengubah string JSON menjadi variable PHP.
     $data = json_decode($file, true);
@@ -18,12 +17,12 @@ if (!empty($_POST)) {
     //membatalkan inisialisasi variable PHP, sehingga membuat nya kosong.
     unset($_POST["add"]);
     //mengembalikan fungsi array yang berisi semua nilai-nilai array.
-    $data["dosen"] = array_values($data["dosen"]);
+    $data["mata_kuliah"] = array_values($data["mata_kuliah"]);
     //menambah 1 atau beberapa elemen pada array
-    array_push($data["dosen"], $_POST);
+    array_push($data["mata_kuliah"], $_POST);
     //fungsi json_encode untuk mengubah format data Array menjadi JSON
-    file_put_contents("dosen.json", json_encode($data));
-    header("Location: dosen.php");
+    file_put_contents("mata_kuliah.json", json_encode($data));
+    header("Location: mata_kuliah.php");
 }
 ?>
 
@@ -34,7 +33,7 @@ if (!empty($_POST)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="JSON-PHP-CRUD-Bootstrap, initial-scale=1.0">
-    <title>Latihan Web Service 5 : CRUD PHP Data JSON Tanpa Database</title>
+    <title>Latihan Web Service 6 : CRUD PHP Data JSON Tanpa Database</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <style type="text/css">
         .navbar-default {
@@ -65,39 +64,25 @@ if (!empty($_POST)) {
     <div class="container">
         <div class="row col-sm-5 col-sm-offset-3 ">
 
-            <h3>Tambah Data Dosen</h3>
+            <h3>Tambah Data Mata Kuliah</h3>
 
         </div>
         <br><br><br>
         <div class="row">
             <form action="" method="POST">
                 <div class="form-group">
-                    <label for="inputnidn">Nomor Induk Dosen</label>
-                    <input type="text" class="form-control" required="required" id="inputnidn" name="nidn" placeholder="Nomor Induk Dosen">
+                    <label for="inputkode_mk">Kode Mata Kuliah</label>
+                    <input type="text" class="form-control" required="required" id="inputkode_mk" name="kode_mk" placeholder="Kode Mata Kuliah">
                     <span class="help-block"></span>
                 </div>
                 <div class="form-group">
-                    <label for="inputnama">Nama dosen</label>
-                    <input type="text" class="form-control" required="required" id="inputnamadosen" name="nm_dosen" placeholder="Nama Lengkap dosen">
+                    <label for="inputnama_mk">Nama Mata Kuliah</label>
+                    <input type="text" class="form-control" required="required" id="inputnama_mk" name="nama_mk" placeholder="Nama Mata Kuliah">
                     <span class="help-block"></span>
                 </div>
                 <div class="form-group">
-                    <label for="inputtgllahir">Tanggal Lahir</label>
-                    <input type="date" class="form-control" required="required" id="inputtgllahir" name="tgl_lahir" placeholder="mm / dd / yyyy">
-                    <span class="help-block"></span>
-                </div>
-                <div class="form-group">
-                    <label for="inputjkelamin">Jenis Kelamin</label>
-                    <select class="form-control" required="required" id="inputjkelamin" name="j_kel">
-                        <option>Please Select</option>
-                        <option value="1">Pria</option>
-                        <option value="2">Wanita</option>
-                    </select>
-                    <span class="help-block"></span>
-                </div>
-                <div class="form-group">
-                    <label for="inputhomebase">Home Base</label>
-                    <select class="form-control" required="required" id="inputhomebase" name="home_base">
+                    <label for="inputjurusan">Jurusan</label>
+                    <select class="form-control" required="required" id="inputjurusan" name="jurusan">
                         <option>Please Select</option>
                         <option value="1">Teknik Informatika / S-1</option>
                         <option value="2">Rekayasa Perangkat Lunak / S-1</option>
@@ -108,18 +93,23 @@ if (!empty($_POST)) {
                     <span class="help-block"></span>
                 </div>
                 <div class="form-group">
-                    <label for="inputpendididkanakhir">Pendidikan Terakhir</label>
-                    <select class="form-control" required="required" id="inputpendididkanakhir" name="pend_akhir">
+                    <label for="inputjenis">Jenis Mata Kuliah</label>
+                    <select class="form-control" required="required" id="inputjenis" name="jjenis">
                         <option>Please Select</option>
-                        <option value="1">SARJANA / S-1</option>
-                        <option value="2">PASCA SARJANA / S-2</option>
-                        <option value="3">DOKTOR / S-3</option>
+                        <option value="1">M K D U</option>
+                        <option value="2">M K D K</option>
+                        <option value="3">M K K</option>
                     </select>
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="inputsks">Bobot SKS</label>
+                    <input type="text" class="form-control" required="required" id="inputsks" name="sks" placeholder="Bobot SKS">
                     <span class="help-block"></span>
                 </div>
                 <div class="form-actions">
                     <button type="submit" class="btn btn-success">T A M B A H</button>
-                    <a href="dosen.php" class="btn btn btn-default">B A C K</a>
+                    <a href="mata_kuliah.php" class="btn btn btn-default">B A C K</a>
                 </div>
             </form>
         </div>

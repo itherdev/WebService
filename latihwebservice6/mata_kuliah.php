@@ -40,7 +40,7 @@ $jsonfile = json_decode($getfile);
                         <a href="../latihwebservice5/dosen.php">Dosen</a>
                     </li>
                     <li class="clr4">
-                        <a href="mata_kuliah.php">mata_kuliah</a>
+                        <a href="../latihwebservice6/mata_kuliah.php">Mata Kuliah</a>
                     </li>
 
                 </ul>
@@ -95,7 +95,7 @@ $jsonfile = json_decode($getfile);
                             $jurusan = "KOMPUTE AKUNTANSI / D-4";
                         }
 
-                        $jenis = ($obj->pend_akhir);
+                        $jenis = ($obj->jenis);
                         if ($jenis == 1) {
                             $jenis = "M K D U";
                         } elseif ($jenis == 2) {
@@ -111,10 +111,10 @@ $jsonfile = json_decode($getfile);
                             <td><?php echo $obj->nama_mk; ?></td>
                             <td><?php echo $jurusan; ?></td>
                             <td><?php echo $jenis; ?></td>
-                            <td><?php echo $sks; ?></td>
+                            <td><?php echo $obj->sks; ?></td>
                             <td>
-                                <a class="btn btn-xs btn-primary" href="updatemata_kuliah.php?id=<?php echo $index; ?>">Edit</a>
-                                <a class="btn btn-xs btn-danger" href="deletemata_kuliah.php?id=<?php echo $index; ?>">Delete</a>
+                                <a class="btn btn-xs btn-primary" href="update_mata_kuliah.php?id=<?php echo $index; ?>">Edit</a>
+                                <a class="btn btn-xs btn-danger" href="delete_mata_kuliah.php?id=<?php echo $index; ?>">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
